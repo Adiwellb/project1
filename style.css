@@ -1,47 +1,232 @@
-h1{
-    color: brown;
-}
-p{
-    /*background-color: blueviolet;*/
-}
-button{
-    background-color: chocolate;
-    height: 30px;
-}
-button:hover{
-     background-color: chartreuse;
-}
-label{
-font-weight: 700;
-}
-input{
-    color: blue;
-}
-Body{
-    background-color: rgb(242, 241, 241);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.container{
-    margin-bottom: 30px;
-  border:1px black solid;
-  width: 250px;
-  height: 500px;
-  padding:30px;
-  border-radius: 10px;
-  background-color:ghostwhite;
-}
-button{
-    height: 30px;
+/* ── Variables ─────────────────────────────── */
+:root {
+  --color-bg: #f0f4ff;
+  --color-card: #ffffff;
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-secondary: #e0e7ff;
+  --color-secondary-hover: #c7d2fe;
+  --color-text: #1e1b4b;
+  --color-muted: #6b7280;
+  --color-border: #d1d5db;
+  --color-border-focus: #4f46e5;
+  --radius: 10px;
+  --shadow: 0 4px 24px rgba(79, 70, 229, 0.10);
+  --transition: 0.2s ease;
 }
 
-button.Sign{
-    width: 270px;
-    background-color: rgb(54, 30, 210);
-    color: white;
+/* ── Reset ─────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-button.Log{
-    width: 270px;
-    background-color: rgb(18, 188, 26);
-    color: white;
+/* ── Page layout ───────────────────────────── */
+body {
+  background: var(--color-bg);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.page {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Brand header ──────────────────────────── */
+.brand {
+  text-align: center;
+}
+
+.brand h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+}
+
+.brand .tagline {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+/* ── Card ──────────────────────────────────── */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ── Form groups ───────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label,
+.group-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* ── Inputs ────────────────────────────────── */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  background: #fafafa;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder {
+  color: #9ca3af;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.12);
+  background: #fff;
+}
+
+/* ── Radio group ───────────────────────────── */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--color-text);
+}
+
+.radio-option input[type="radio"] {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ── Checkbox ──────────────────────────────── */
+.checkbox-group {
+  margin-top: -4px;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: var(--color-muted);
+}
+
+.checkbox-option input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* ── Buttons ───────────────────────────────── */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn {
+  width: 100%;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-secondary-hover);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ── Login link ────────────────────────────── */
+.login-link {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.login-link a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
 }

@@ -1,59 +1,75 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>My App</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!--הערה לקוד-->
-        <h1>NALA APP </h1>
-        <div class="container">
-        <h3>Sing UP</h3>
-        <label for="name">Name:</label>
-        <input id-name type="text" placeholder="write your name"/>
-        <br/>
-        <br/>
-        <label>Email:</label>
-        <input type="text" placeholder="write your Email"/>
-        <br/>
-        <br/>
-        <label>Password:</label>
-        <input type="text" placeholder="write your Password"/>
-        <br/>
-        <br/>
-        <div class="row">
-            <label for="age">Your Age</label>
-            <input id="age" type="number" placeholder="write your Age"/>
-          </div>
-        <br/>
-        <br/>
-        <button me onclick="onclickkMe()">click me</button>
-        <p>Choose Gender</p>
-            <input type="radio" id="MaleOption" name="Genderoption"/>
-            <label for="MaleOption">Male</label>
-            <br/>
-            <input type="radio" id="FemaleOption" name="Genderoption"/>
-            <label for="FemaleOption">Female</label> 
-            <br/>
-            <input type="radio" name="Genderoption"/>
-            <label for="">Other</label>
-            <br/>
-            <br/>
-            <button class="Sign" onclick="onclickSign()">Things happen when you click me</button>
-            <br/>
-            <br/>
-            <button class="Log"> Nothings happens when you click me</button>
-            <br/>
-            <input type="checkbox"/>
-            <br/>
-            <br/>
-            <label> Alrady sign in? Please log in here</label>
-            <iframe 
-                src="data:image/jpeg;base64,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"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nala App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="brand">
+        <h1>NALA APP</h1>
+        <p class="tagline">Create your account</p>
+      </header>
+
+      <div class="card">
+        <h2>Sign Up</h2>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your full name" />
         </div>
-        <script src="JS.js"></script>
-    </body>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Create a password" />
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input id="age" type="number" placeholder="Your age" min="1" max="120" />
+        </div>
+
+        <div class="form-group">
+          <label class="group-label">Gender</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="gender" value="male" />
+              <span>Male</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="gender" value="female" />
+              <span>Female</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="gender" value="other" />
+              <span>Other</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group checkbox-group">
+          <label class="checkbox-option">
+            <input type="checkbox" id="terms" />
+            <span>I agree to the Terms &amp; Conditions</span>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-secondary" onclick="onclickkMe()">Say Hello</button>
+          <button class="btn btn-primary" onclick="onclickSign()">Create Account</button>
+        </div>
+
+        <p class="login-link">Already have an account? <a href="#">Log in here</a></p>
+      </div>
+    </div>
+
+    <script src="JS.js"></script>
+  </body>
 </html>
