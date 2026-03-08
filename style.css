@@ -1,0 +1,47 @@
+h1{
+    color: brown;
+}
+p{
+    /*background-color: blueviolet;*/
+}
+button{
+    background-color: chocolate;
+    height: 30px;
+}
+button:hover{
+     background-color: chartreuse;
+}
+label{
+font-weight: 700;
+}
+input{
+    color: blue;
+}
+Body{
+    background-color: rgb(242, 241, 241);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    margin-bottom: 30px;
+  border:1px black solid;
+  width: 250px;
+  height: 500px;
+  padding:30px;
+  border-radius: 10px;
+  background-color:ghostwhite;
+}
+button{
+    height: 30px;
+}
+
+button.Sign{
+    width: 270px;
+    background-color: rgb(54, 30, 210);
+    color: white;
+}
+
+button.Log{
+    width: 270px;
+    background-color: rgb(18, 188, 26);
+    color: white;
+}
